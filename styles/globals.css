@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
+
+@font-face {
+    font-family: 'Sentient';
+    src: url('/fonts/Sentient-Variable.woff2') format('woff2'),
+         url('/fonts/Sentient-Variable.woff') format('woff'),
+         url('/fonts/Sentient-Variable.ttf') format('truetype');
+         font-weight: 200 700;
+         font-display: swap;
+         font-style: normal;
+  }
+
+@font-face {
+    font-family: 'Sentient';
+    src: url('/fonts/Sentient-VariableItalic.woff2') format('woff2'),
+         url('/fonts/Sentient-VariableItalic.woff') format('woff'),
+         url('/fonts/Sentient-VariableItalic.ttf') format('truetype');
+         font-weight: 200 700;
+         font-display: swap;
+         font-style: italic;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,4 +27,31 @@
 html.dark {
     color: #ffffff;
     background-color: #000000;
+}
+
+h1, h3, .font-sentient {
+    font-family: 'Sentient', serif;
+}
+
+.font-inter {
+    font-family: 'Inter', sans-serif;
+}
+
+.bg-rainbow {
+    background: linear-gradient(90deg, #FF0000 0%, #FF7A00 18.75%, #FFD600 33.83%, #00FF19 46.35%, #00FFFF 59.2%, #2400FF 71.89%, #9E00FF 82.81%, #FF00B8 94.79%),
+linear-gradient(0deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35));
+}
+
+@supports (-webkit-touch-callout: none) {
+    .h-screen {
+      height: -webkit-fill-available;
+    }
+  }
+
+.story > span {
+    text-decoration-style: wavy;
+}
+
+.story {
+    @apply mb-4
 }
