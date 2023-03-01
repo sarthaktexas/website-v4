@@ -6,8 +6,10 @@ import { motion } from 'framer-motion'
 export default function Footer() {
   const song = useSWR("/api/now-playing", fetcher).data;
 
+  // min-height prevents a layout shift but allows for a layout change in cases where there's 50 artists and it doesn't shift
+  // 5 rem is equal to h-20, but min-h-20 doesn't exist, so this is the workaround
   return (
-    <div className="grow-0 h-20">
+    <div className="grow-0 min-h-[5rem]">
       {song?.title ? (
         <motion.div
           className="my-5 lg:mb-20 mx-8 md:mx-16 lg:ml-32 text-xs md:text-sm font-inter font-medium text-[#707070] flex flex-row"
@@ -15,8 +17,6 @@ export default function Footer() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ type: "easeInOut", duration: 0.5, delay: 0.1}}
         >
-          {/* &copy; {new Date().getFullYear()} Sarthak Mohanty. All rights reserved.{' '} */}
-          {/* <br /> */}
           {song?.device === "Sarthak's AirPods Pro" ? (
             <svg
               className="h-4 mr-2"
