@@ -6,9 +6,9 @@ export default function Footer() {
   const song = useSWR("/api/now-playing", fetcher).data;
 
   return (
-    <>
+    <div className="grow-0 h-24">
       {song?.title ? (
-        <div className="grow-0 my-5 lg:mb-20 mx-8 md:mx-16 lg:ml-32 text-xs md:text-sm font-inter font-medium text-[#707070] flex flex-row">
+        <div className="my-5 lg:mb-20 mx-8 md:mx-16 lg:ml-32 text-xs md:text-sm font-inter font-medium text-[#707070] flex flex-row">
           {/* &copy; {new Date().getFullYear()} Sarthak Mohanty. All rights reserved.{' '} */}
           {/* <br /> */}
           {song?.device === "Sarthak's AirPods Pro" ? (
@@ -47,6 +47,6 @@ export default function Footer() {
           </div>
         </div>
       ) : null}
-    </>
+    </div>
   );
 }
