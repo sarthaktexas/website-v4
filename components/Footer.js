@@ -1,14 +1,20 @@
 import useSWR from "swr";
 import fetcher from "../lib/fetcher";
 import Balancer from "react-wrap-balancer";
+import { motion } from 'framer-motion'
 
 export default function Footer() {
   const song = useSWR("/api/now-playing", fetcher).data;
 
   return (
-    <div className="grow-0 h-24">
+    <div className="grow-0 h-20">
       {song?.title ? (
-        <div className="my-5 lg:mb-20 mx-8 md:mx-16 lg:ml-32 text-xs md:text-sm font-inter font-medium text-[#707070] flex flex-row">
+        <motion.div
+          className="my-5 lg:mb-20 mx-8 md:mx-16 lg:ml-32 text-xs md:text-sm font-inter font-medium text-[#707070] flex flex-row"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: "easeInOut", duration: 0.5, delay: 0.1}}
+        >
           {/* &copy; {new Date().getFullYear()} Sarthak Mohanty. All rights reserved.{' '} */}
           {/* <br /> */}
           {song?.device === "Sarthak's AirPods Pro" ? (
@@ -45,7 +51,7 @@ export default function Footer() {
               {song?.artist ? ` by ${song?.artist} on ${song?.device}.` : ""}
             </Balancer>
           </div>
-        </div>
+        </motion.div>
       ) : null}
     </div>
   );

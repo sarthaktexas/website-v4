@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 export default function Nav() {
 
@@ -23,15 +24,36 @@ export default function Nav() {
 
     return (
         <nav className="grow-0">
-            <ul className="flex flex-wrap lg:flex-row gap-x-5 gap-y-1 lg:gap-x-2 px-10 lg:px-0 mt-3 text-sm md:text-base font-inter font-medium justify-around mx-auto lg:w-8/12 xl:w-5/12 text-[#A1A1A1]">
+            <motion.ul
+                layout
+                className="flex flex-wrap lg:flex-row gap-x-5 gap-y-1 lg:gap-x-2 px-10 lg:px-0 mt-3 text-sm md:text-base font-inter font-medium justify-around mx-auto lg:w-8/12 xl:w-5/12 text-[#A1A1A1]"
+                initial="hidden"
+                animate="visible"
+                variants={{
+                    visible: { opacity: 1 },
+                    hidden: { opacity: 0 },
+                }}
+                transition={{ type: "easeInOut", delay: 0.8, staggerChildren: 0.2 }}
+            >
                 {links.map(({ href, label }) => (
-                    <li key={`${href}${label}`} className="list-none pointer-events-auto p-0 m-0">
+                    <motion.li
+                        key={`${href}${label}`}
+                        className="list-none pointer-events-auto p-0 m-0"
+                        variants={{
+                            visible: { opacity: 1, y: 0 },
+                            hidden: { opacity: 0, y: -10 },
+                        }}
+                        whileHover={{
+                            rotate: [0, 10, -10, 0],
+                            transition: { duration: 0.5 }
+                        }}
+                        >
                         <Link href={href} className="hover:text-white">
                             {label.toLowerCase()}
                         </Link>
-                    </li>
+                    </motion.li>
                 ))}
-            </ul>
+            </motion.ul>
         </nav>
     )
 }
