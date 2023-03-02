@@ -11,9 +11,7 @@ export default function Nav() {
         // { href: 'https://www.notion.so/sarthakmohanty/Annual-Review-2020-d8e25a934aa2441fae8cc79a9a1bdbc8', label: 'annual review' },
         // { href: 'https://www.notion.so/sarthakmohanty/Reading-List-2020-10daef3ae49e4b09a1bf6223eaa1b80b', label: 'reading list' },
         // { href: 'https://medium.com/@sarthaktexas', label: 'writing' },
-        // { href: 'https://twitter.com/sarthaktexas', label: 'thoughts'}
         { href: 'mailto:sarthak@sarthakmohanty.me', label: 'email'},
-        { href: 'https://vsco.co/sarthak-mohanty', label: 'vsco'},
         { href: 'https://srtk.me/gh', label: 'github'},
         { href: 'https://srtk.me/tw', label: 'twitter'},
         { href: 'https://read.cv/srtk', label: 'cv'},
