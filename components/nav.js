@@ -13,7 +13,7 @@ export default function Nav() {
         // { href: 'https://medium.com/@sarthaktexas', label: 'writing' },
         { href: 'mailto:sarthak@sarthakmohanty.me', label: 'email'},
         { href: 'https://github.com/sarthaktexas', label: 'github'},
-        { href: 'https://twitter.com/sarthaktexas', label: 'twitter'},
+        // { href: 'https://twitter.com/sarthaktexas', label: 'twitter'},
         { href: 'https://read.cv/srtk', label: 'cv'},
         // { href: '/ol/rob-a-bank', label: 'open letter to rob a bank'},
         // { href: '/ol/art', label: 'open letter about art'},
