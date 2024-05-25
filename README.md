@@ -1,5 +1,5 @@
 # Website v4
-A website created with magic, and everything I've learned over the past 6 years of web design and development.
+A website made with magic.
 
 ![image](https://user-images.githubusercontent.com/28282096/221790390-1dbeb38e-9d25-469c-84ca-6a20b94c3a14.png)
 
